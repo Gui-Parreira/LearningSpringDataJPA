@@ -181,8 +181,9 @@ public class Principal {
         var quantidadeTemporadas = leitura.nextInt();
         System.out.println("Avaliações a partir de que valor? ");
         var avaliacao = leitura.nextDouble();
-        List<Serie> seriesEncontradas = repositorio.findByTotalTemporadasLessThanEqualAndAvaliacaoGreaterThanEqual(quantidadeTemporadas, avaliacao);
-       // System.out.println("Quantidade de temporadas selecionadas: " + quantidadeTemporadas);
+       // List<Serie> seriesEncontradas = repositorio.findByTotalTemporadasLessThanEqualAndAvaliacaoGreaterThanEqual(quantidadeTemporadas, avaliacao);
+       // OR
+        List<Serie> seriesEncontradas = repositorio.seriesPorTemporadaEAvaliacao(quantidadeTemporadas, avaliacao);
         seriesEncontradas.forEach(s ->
                 System.out.println(s.getTitulo() + " " +
                         " - avaliação " + s.getAvaliacao()));
